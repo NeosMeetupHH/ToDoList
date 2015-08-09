@@ -1,0 +1,54 @@
+.toDoList__headline {
+  text-align: center;
+}
+
+.toDoList__labelInput {
+  width: 100%;
+}
+
+.toDoList__list {
+  box-shadow: 0 0 1px rgba(#000, 0.3);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-top: rs(30);
+
+  > li {
+    position: relative;
+    padding: rs(20) rs(60);
+
+    input {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      width: 20px;
+      height: 20px;
+      margin-top: -10px;
+
+      &:checked + span {
+        color: rgba(#000, 0.3);
+        text-decoration: line-through;
+      }
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      display: none;
+    }
+
+    &:hover,
+    &:nth-child(even):hover {
+      background-color: darken(#fff, 10%);
+      button {
+        display: block;
+      }
+    }
+
+    &:nth-child(even) {
+      background-color: darken(#fff, 2%);
+    }
+  }
+}

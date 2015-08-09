@@ -1,0 +1,5 @@
+NeosMeetupHH.ToDoList.IndexController.index = TYPO3.TypoScript:Template {
+  templatePath = 'resource://NeosMeetupHH.ToDoList/Private/Fluid/Pages/Index.html'
+  title = 'Neos Meetup HH - ToDoList Example'
+  application = NeosMeetupHH.ToDoList:List
+}

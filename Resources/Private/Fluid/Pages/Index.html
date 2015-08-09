@@ -1,0 +1,25 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{title}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{f:uri.resource(path: 'resource://NeosMeetupHH.ToDoList/Public/Styles/Main.css')}">
+</head>
+<body>
+    <div class="application">
+        {application -> f:format.raw()}
+
+        <footer class="siteFooter">
+            powered by <a href="https://www.neos.io/">Flow</a>, <a href="https://github.com/reduct">reduct</a> and
+            <a href="https://github.com/Inkdpixels/Brics">Brics</a>
+        </footer>
+    </div>
+    
+    <script src="{f:uri.resource(path: 'resource://NeosMeetupHH.ToDoList/Public/JavaScript/Vendor.min.js')}"></script>
+    <script src="{f:uri.resource(path: 'resource://NeosMeetupHH.ToDoList/Public/JavaScript/App.min.js')}"></script>
+</body>
+</html>

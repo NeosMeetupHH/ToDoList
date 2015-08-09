@@ -1,0 +1,8 @@
+TYPO3:
+  TypoScript:
+    defaultContext:
+      'Persistence': 'NeosMeetupHH\ToDoList\Eel\Helper\PersistenceHelper'
+
+NeosMeetupHH:
+  ToDoList:
+    apiEndpoint: '/api/'

@@ -1,0 +1,39 @@
+prototype(NeosMeetupHH.ToDoList:List) < prototype(TYPO3.TypoScript:Tag) {
+  attributes {
+    data-component = 'List'
+    data-id = ${Persistence.identity(list)}
+    data-endpoint = ${Configuration.setting('NeosMeetupHH.ToDoList.apiEndpoint')}
+
+    class = 'toDoList'
+  }
+
+  content = TYPO3.TypoScript:Array {
+    headline = TYPO3.TypoScript:Tag {
+      tagName = 'h1'
+      content = 'Awesome ToDoList'
+
+      attributes.class = 'toDoList__headline'
+    }
+
+    input = TYPO3.TypoScript:Tag {
+      tagName = 'input'
+      attributes {
+        type = 'input'
+        data-input = 'label'
+
+        placeholder = 'Add new item...'
+        class = 'textInput toDoList__labelInput'
+      }
+    }
+
+    list = TYPO3.TypoScript:Tag {
+      tagName = 'ul'
+      attributes.class = 'toDoList__list'
+      content = TYPO3.TypoScript:Collection {
+        collection = ${list.items}
+        itemName = 'item'
+        itemRenderer = NeosMeetupHH.ToDoList:Item
+      }
+    }
+  }
+}

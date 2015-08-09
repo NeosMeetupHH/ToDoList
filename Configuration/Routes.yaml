@@ -1,0 +1,25 @@
+########################################################################################
+# Main Application Route
+########################################################################################
+-
+  name: 'Application entrypoint'
+  uriPattern: ''
+  defaults:
+    '@package': 'NeosMeetupHH.ToDoList'
+    '@controller': 'Index'
+    '@action': 'index'
+    '@format': 'html'
+  httpMethods: ['GET']
+
+########################################################################################
+# API Routes
+########################################################################################
+-
+  name: 'List item CRUD routes'
+  uriPattern: 'api/{@action}'
+  defaults:
+    '@package': 'NeosMeetupHH.ToDoList'
+    '@controller': 'Api'
+    '@action': 'add'
+    '@format': 'html'
+  httpMethods: ['POST']

@@ -1,0 +1,38 @@
+prototype(NeosMeetupHH.ToDoList:Item) < prototype(TYPO3.TypoScript:Tag) {
+  tagName = 'li'
+
+  attributes {
+    data-id = ${Persistence.identity(item)}
+    data-endpoint = ${Configuration.setting('NeosMeetupHH.ToDoList.apiEndpoint')}
+    data-isDone = ${item.done ? 'true' : 'false'}
+  }
+
+  content = TYPO3.TypoScript:Array {
+    checkbox = TYPO3.TypoScript:Tag {
+      tagName = 'input'
+      attributes {
+        type = 'checkbox'
+        checked = 'checked'
+        data-action = 'toggleState'
+        checked.@if.itemIsDone = ${item.done}
+      }
+    }
+
+    label = TYPO3.TypoScript:Tag {
+      tagName = 'span'
+      content = ${item.label}
+    }
+
+    removeButton = TYPO3.TypoScript:Tag {
+      tagName = 'button'
+      attributes {
+        type = 'button'
+        data-action = 'remove'
+
+        class = 'btn btn--negative'
+      }
+
+      content = 'X'
+    }
+  }
+}
