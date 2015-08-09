@@ -1,9 +1,10 @@
 {
     "name": "neosmeetuphh/todolist",
     "type": "typo3-flow-package",
-    "description": "Add description here",
+    "description": "This example will show how to use TypoScript 2.0 in a context outside of Neos.",
     "require": {
-        "typo3/flow": "*"
+        "typo3/flow": "*",
+        "typo3/typoscript": "*"
     },
     "autoload": {
         "psr-0": {
